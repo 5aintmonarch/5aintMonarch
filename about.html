@@ -4,103 +4,162 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>About 5aint Monarch</title>
-<meta name="description" content="About 5aint Monarch: who we are, the team, and how to reach us. This website is a showcase and is not for buying.">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=DM+Sans:wght@400;500;700&display=swap">
+<meta name="description" content="About 5AINT MONARCH: our story, the team, and how to reach us. This website is for viewing only and is not a store.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap">
 <style>
-/* Layout: same bar as the collection page, big headline, a bordered "not for buying" notice, story, team grouped by role, contact. */
+/* Layout: black gallery site. Slim top bar with wordmark and lowercase serif nav, oversized light serif headline, tracked small text, thin rules. */
 :root{
-  --bg:#1c1e1f;
-  --surface:#26292a;
-  --line:#3a3e40;
-  --fg:#f6f7f4;
-  --muted:#a4a9a6;
-  --accent:#b9d12a;
-  --accent-ink:#1c1e1f;
-  --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
-  --body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --bg:#0a0a0a;
+  --bar:#050505;
+  --panel:#101010;
+  --fg:#f3f1ec;
+  --muted:#aaa69e;
+  --dim:#6f6c66;
+  --line:#272522;
+  --serif:"Cormorant Garamond","Cormorant",Garamond,"Times New Roman",serif;
   color-scheme:dark;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;background:var(--bg)}
-body{background:var(--bg);color:var(--fg);font:400 16px/1.6 var(--body);margin:0;
+html{background:var(--bg);scroll-behavior:smooth;scroll-padding-top:96px}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 18px/1.6 var(--serif);
+  background-image:radial-gradient(ellipse 80% 50% at 70% 0%,#1b1b1a 0%,rgba(10,10,10,0) 70%);background-repeat:no-repeat;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+body.lock{overflow:hidden}
 a{color:inherit}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-.wrap{max-width:1120px;margin:0 auto}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:1px solid var(--fg);outline-offset:4px}
+.wrap{max-width:1320px;margin:0 auto}
 
-header{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line);
+header{position:sticky;top:0;z-index:20;background:var(--bar);
   margin:0 calc(-1*max(16px,env(safe-area-inset-left,0px)));padding:0 max(16px,env(safe-area-inset-left,0px))}
-.bar{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
-.logo{font:900 26px/1 var(--display);letter-spacing:.04em;text-transform:uppercase;text-decoration:none}
-.logo b{color:var(--accent);font-weight:900}
-nav{display:flex;gap:22px;align-items:center}
-nav a{font-size:14px;text-decoration:none;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
-nav a:hover,nav a[aria-current="page"]{color:var(--fg)}
-nav a[aria-current="page"]{border-bottom:2px solid var(--accent);padding-bottom:2px}
+.bar{max-width:1320px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:80px}
+.logo{font:600 30px/1 var(--serif);letter-spacing:.01em;text-transform:uppercase;text-decoration:none;white-space:nowrap}
+.logo i{font-style:normal;font-size:38px}
+nav{display:flex;gap:38px;align-items:center}
+nav a{font-size:20px;text-decoration:none;color:#e6e2d9;padding-block:6px;border-bottom:1px solid transparent;text-transform:lowercase}
+nav a:hover{border-bottom-color:var(--dim)}
+nav a[aria-current="page"]{border-bottom-color:var(--fg)}
 
-.hero{padding-block:72px 40px}
-.eyebrow{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:0 0 18px}
-h1{font:900 clamp(64px,12vw,140px)/.85 var(--display);text-transform:uppercase;margin:0;text-wrap:balance}
-h1 span{color:var(--accent)}
-h2{font:800 clamp(36px,5vw,56px)/.95 var(--display);text-transform:uppercase;margin:0 0 24px;text-wrap:balance}
-h3{font:800 24px/1 var(--display);letter-spacing:.08em;text-transform:uppercase;margin:0 0 14px;color:var(--accent)}
+.hero{position:relative;display:grid;grid-template-columns:1fr minmax(240px,340px);gap:40px;align-items:start;padding-block:64px 44px;overflow:hidden}
+.crown{position:absolute;right:6%;top:-6px;width:min(46vw,520px);color:var(--fg);opacity:.08;pointer-events:none}
+.hero > div{position:relative;min-width:0}
+h1{font:300 clamp(60px,10.5vw,148px)/.92 var(--serif);text-transform:uppercase;margin:0;letter-spacing:.005em;text-wrap:balance}
+.tag{margin:18px 0 0 6px;font-size:19px;letter-spacing:.55em;color:var(--muted);text-transform:lowercase}
+.lede{margin:14px 0 0;font-size:17px;line-height:1.55;letter-spacing:.14em;color:var(--muted);text-transform:lowercase}
+.rule{display:block;width:76px;border-top:1px solid var(--muted);margin-top:26px}
 
-.notice{border:1px solid var(--accent);padding:22px 24px;margin-block:8px 0;display:grid;gap:6px}
-.notice strong{font:800 24px/1.1 var(--display);letter-spacing:.06em;text-transform:uppercase}
-.notice p{margin:0;color:var(--muted);max-width:68ch}
+.filters{display:flex;gap:30px;flex-wrap:wrap;padding-bottom:26px}
+.f{background:none;border:0;border-bottom:1px solid transparent;padding:4px 0;font-size:17px;letter-spacing:.22em;color:var(--dim);text-transform:lowercase}
+.f:hover{color:var(--fg)}
+.f[aria-pressed="true"]{color:var(--fg);border-bottom-color:var(--fg)}
 
-section{padding-block:64px;border-top:1px solid var(--line)}
-.hero + section{margin-top:40px}
-.story{display:grid;grid-template-columns:1fr 1fr;gap:40px}
-.story p{color:var(--muted);font-size:18px;max-width:52ch;margin:0 0 16px}
-.story p strong{color:var(--fg);font-weight:500}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{min-width:0}
+.tile{display:block;width:100%;padding:0;border:1px solid #1d1c1a;background:#111;aspect-ratio:8/9;overflow:hidden;position:relative}
+.tile img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.02);transition:transform .5s ease}
+.tile:hover img{transform:scale(1.06)}
+.tile::after{content:"view";position:absolute;left:0;right:0;bottom:0;padding:26px 0 12px;text-align:center;font-size:16px;letter-spacing:.4em;text-transform:lowercase;background:linear-gradient(transparent,rgba(0,0,0,.78));opacity:0;transition:opacity .25s}
+.tile:hover::after,.tile:focus-visible::after{opacity:1}
+.cap{display:flex;justify-content:space-between;gap:12px;align-items:baseline;padding-top:12px}
+.cap h3{margin:0;font:500 21px/1.2 var(--serif);letter-spacing:.12em;text-transform:uppercase;overflow-wrap:anywhere}
+.cap .p{color:var(--muted);font-size:20px;font-variant-numeric:lining-nums tabular-nums}
+.note{margin:2px 0 0;color:var(--dim);font-size:16px;font-style:italic;letter-spacing:.04em}
 
-.team{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:40px 32px}
-.group{min-width:0}
-.people{list-style:none;margin:0;padding:0;display:grid;gap:0}
-.people li{padding:12px 0;border-bottom:1px solid var(--line);font-size:18px;font-weight:500}
-.people li:first-child{border-top:1px solid var(--line)}
+section{padding-block:72px;border-top:1px solid var(--line)}
+h2{font:300 clamp(40px,6vw,76px)/1 var(--serif);text-transform:uppercase;margin:0 0 28px;letter-spacing:.01em;text-wrap:balance}
+h3.k{font:500 15px/1 var(--serif);letter-spacing:.4em;text-transform:lowercase;color:var(--muted);margin:0 0 16px}
 
-.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-.card{background:var(--surface);border:1px solid var(--line);padding:24px;min-width:0}
-.card .k{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
-.card .v{font:700 22px/1.3 var(--body);margin:0;overflow-wrap:anywhere}
-.card .v a{text-decoration:none;border-bottom:2px solid var(--accent)}
-.card .v a:hover{background:var(--accent);color:var(--accent-ink)}
-.cta{display:inline-block;margin-top:28px;background:var(--accent);color:var(--accent-ink);padding:15px 28px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:14px;text-decoration:none}
-.cta:hover{background:var(--fg)}
+footer{border-top:1px solid var(--line);margin-top:40px;padding-block:28px 44px;color:var(--dim);font-size:16px;letter-spacing:.12em;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;text-transform:lowercase}
+footer a{text-decoration:none;border-bottom:1px solid var(--dim)}
+footer a:hover{color:var(--fg);border-color:var(--fg)}
 
-footer{border-top:1px solid var(--line);padding-block:28px 40px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-
+@media (max-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}}
 @media (max-width:760px){
-  .story{grid-template-columns:1fr;gap:8px}
-  .hero{padding-block:48px 28px}
-  section{padding-block:48px}
-  nav{gap:16px}
+  .bar{flex-wrap:wrap;gap:0;min-height:0;padding-top:14px}
+  .logo{font-size:26px}
+  nav{order:3;width:100%;gap:26px;overflow-x:auto;padding-block:8px 6px;margin-top:6px;scrollbar-width:none}
+  nav::-webkit-scrollbar{display:none}
+  nav a{font-size:18px;white-space:nowrap}
+  .hero{grid-template-columns:minmax(0,1fr);gap:24px;padding-block:40px 28px}
+  h1{font-size:clamp(34px,11vw,80px)}
+  .tag{letter-spacing:.4em;font-size:16px}
+  .grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .cap h3{font-size:17px;letter-spacing:.08em}
+  .cap .p{font-size:17px}
+  .cap{flex-direction:column;gap:2px}
+  .filters{gap:20px}
+  section{padding-block:52px}
 }
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+.notice{border:1px solid #4a4741;padding:24px 28px;display:grid;gap:8px;margin-bottom:8px}
+.notice strong{font:500 26px/1.1 var(--serif);letter-spacing:.2em;text-transform:uppercase}
+.notice p{margin:0;color:var(--muted);max-width:64ch;letter-spacing:.03em}
+.story{display:grid;grid-template-columns:1fr 1.2fr;gap:48px}
+.story p{color:#cfcbc2;font-size:21px;line-height:1.7;max-width:58ch;margin:0 0 20px}
+.team{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:44px 36px}
+.group{min-width:0}
+.people{list-style:none;margin:0;padding:0}
+.people li{padding:14px 0;border-bottom:1px solid var(--line);font-size:24px;letter-spacing:.06em}
+.people li:first-child{border-top:1px solid var(--line)}
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.card{background:var(--panel);border:1px solid #2a2825;padding:28px;min-width:0}
+.card .k{font-size:15px;letter-spacing:.4em;text-transform:lowercase;color:var(--muted);margin:0 0 10px}
+.card .v{font:500 28px/1.3 var(--serif);margin:0;overflow-wrap:anywhere}
+.card .v a{text-decoration:none;border-bottom:1px solid var(--muted)}
+.card .v a:hover{border-color:var(--fg)}
+.back{display:inline-block;margin-top:30px;font-size:18px;letter-spacing:.3em;text-transform:lowercase;text-decoration:none;border-bottom:1px solid var(--muted);padding-bottom:4px}
+.back:hover{border-color:var(--fg)}
+.people li{padding:0}
+.people button{display:flex;justify-content:space-between;align-items:baseline;gap:12px;width:100%;text-align:left;background:none;border:0;padding:14px 0;font:inherit;letter-spacing:inherit}
+.people button::after{content:"instagram";font-size:14px;letter-spacing:.3em;color:var(--dim);transition:color .2s}
+.people button:hover::after,.people button:focus-visible::after{color:var(--fg)}
+.people button:hover{color:#fff}
+dialog{border:0;padding:0;background:transparent;color:var(--fg);width:min(520px,calc(100% - 32px));max-width:none;margin:auto}
+dialog::backdrop{background:rgba(0,0,0,.86)}
+.igp{position:relative;background:var(--panel);border:1px solid #2a2825;padding:56px 40px 40px;display:flex;flex-direction:column;gap:6px}
+.igp .eyebrow{margin:0;font-size:15px;letter-spacing:.45em;color:var(--muted)}
+.igp h2{margin:8px 0 0;font-size:clamp(38px,8vw,56px);line-height:1;letter-spacing:.04em}
+.igp .handle{margin:10px 0 0;font-size:28px;color:var(--muted);overflow-wrap:anywhere}
+.igp .open{align-self:flex-start;margin-top:28px;border:1px solid var(--fg);padding:14px 26px;font-size:17px;letter-spacing:.3em;text-transform:lowercase;text-decoration:none}
+.igp .open:hover{background:var(--fg);color:#000}
+.x{position:absolute;top:10px;right:14px;z-index:2;background:rgba(0,0,0,.5);border:1px solid #3a3733;width:42px;height:42px;font-size:28px;line-height:1;display:grid;place-items:center;padding:0 0 4px}
+.x:hover{background:var(--fg);color:#000}
+@media (max-width:760px){.story{grid-template-columns:1fr;gap:6px}.story p{font-size:19px}.igp{padding:52px 24px 28px}}
 </style>
 </head>
 <body>
 
 <header>
   <div class="bar">
-    <a class="logo" href="index.html">5aint <b>Monarch</b></a>
-    <nav>
-      <a href="index.html#shop">Collection</a>
-      <a href="about.html" aria-current="page">About</a>
+    <a class="logo" href="index.html"><i>5</i>aint Monarch</a>
+    <nav aria-label="Main">
+      <a href="index.html#collections">collections</a>
+      <a href="about.html" aria-current="page">about us</a>
+      <a href="about.html#story">our story</a>
+      <a href="about.html#contact">contact</a>
     </nav>
   </div>
 </header>
 
 <main class="wrap">
   <div class="hero">
-    <p class="eyebrow">About us</p>
-    <h1>Made for<br><span>the few</span></h1>
+    <svg class="crown" viewBox="0 0 400 230" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true">
+      <path d="M40 176 L16 62 L102 124 L200 28 L298 124 L384 62 L360 176 Z"/>
+      <path d="M40 176 Q200 200 360 176 L356 206 Q200 230 44 206 Z"/>
+      <circle cx="16" cy="56" r="9"/><circle cx="200" cy="20" r="10"/><circle cx="384" cy="56" r="9"/>
+      <path d="M102 124 L120 170 M298 124 L280 170 M200 28 L200 176" />
+    </svg>
+    <div>
+      <h1>About us</h1>
+      <p class="tag">made for the few.</p>
+    </div>
+    <div></div>
   </div>
 
   <div class="notice" role="note">
     <strong>This website is not for buying</strong>
-    <p>You can't order anything here. This site shows what 5aint Monarch makes. If you want to ask about a piece, contact us using the email or phone number below.</p>
+    <p>You can't order anything here. This site shows what 5AINT MONARCH makes. If you want to ask about a piece, contact us using the email or phone number below.</p>
   </div>
 
   <section id="story" class="story">
@@ -116,28 +175,16 @@ footer{border-top:1px solid var(--line);padding-block:28px 40px;color:var(--mute
     <h2>The team</h2>
     <div class="team">
       <div class="group">
-        <h3>Owners</h3>
-        <ul class="people">
-          <li>Preston Jasper</li>
-          <li>Jaden Walker</li>
-        </ul>
+        <h3 class="k">owners</h3>
+        <ul class="people"><li><button type="button" data-name="Preston Jasper" data-ig="0zymp1k">Preston Jasper</button></li><li><button type="button" data-name="Jaden Walker" data-ig="sheluvjayy1k__">Jaden Walker</button></li></ul>
       </div>
       <div class="group">
-        <h3>Designers</h3>
-        <ul class="people">
-          <li>Jace Jackson</li>
-          <li>Jayce Aikens</li>
-        </ul>
+        <h3 class="k">designers</h3>
+        <ul class="people"><li><button type="button" data-name="Jace Jackson" data-ig="qukawak9">Jace Jackson</button></li><li><button type="button" data-name="Jayce Aikens" data-ig="xquka.jay">Jayce Aikens</button></li></ul>
       </div>
       <div class="group">
-        <h3>Modelers</h3>
-        <ul class="people">
-          <li>Caiden Fielder</li>
-          <li>Kaleb Walker</li>
-          <li>Markel Cox</li>
-          <li>Jace Jackson</li>
-          <li>Jayce Aikens</li>
-        </ul>
+        <h3 class="k">modelers</h3>
+        <ul class="people"><li><button type="button" data-name="Caiden Fielder" data-ig="relapsinnnn">Caiden Fielder</button></li><li><button type="button" data-name="Kaleb Walker" data-ig="kalebbb.1k">Kaleb Walker</button></li><li><button type="button" data-name="Markel Cox" data-ig="themayomonkey">Markel Cox</button></li><li><button type="button" data-name="Jace Jackson" data-ig="qukawak9">Jace Jackson</button></li><li><button type="button" data-name="Jayce Aikens" data-ig="xquka.jay">Jayce Aikens</button></li></ul>
       </div>
     </div>
   </section>
@@ -146,22 +193,49 @@ footer{border-top:1px solid var(--line);padding-block:28px 40px;color:var(--mute
     <h2>Contact us</h2>
     <div class="contact">
       <div class="card">
-        <p class="k">Email</p>
+        <p class="k">email</p>
         <p class="v"><a href="mailto:5aintmonarch5@gmail.com">5aintmonarch5@gmail.com</a></p>
       </div>
       <div class="card">
-        <p class="k">Phone</p>
+        <p class="k">phone</p>
         <p class="v"><a href="tel:+16015508559">601-550-8559</a></p>
       </div>
     </div>
-    <a class="cta" href="index.html#shop">See the collection</a>
+    <a class="back" href="index.html#collections">see the collections</a>
   </section>
 
   <footer>
-    <span>&copy; 2026 5aint Monarch</span>
-    <span>Showcase only. Not a store.</span>
+    <span>&copy; 2026 5aint monarch</span>
+    <span>viewing only &middot; not a store</span>
   </footer>
 </main>
 
+<dialog id="ig" aria-labelledby="igName">
+  <div class="igp">
+    <button class="x" id="igClose" aria-label="Close">&times;</button>
+    <p class="eyebrow">instagram</p>
+    <h2 id="igName"></h2>
+    <p class="handle" id="igHandle"></p>
+    <a class="open" id="igLink" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">open instagram</a>
+  </div>
+</dialog>
+
+<script>
+var dlg=document.getElementById("ig"), lastFocus=null;
+document.addEventListener("click",function(e){
+  var b=e.target.closest("button[data-ig]"); if(!b) return;
+  lastFocus=b;
+  document.getElementById("igName").textContent=b.dataset.name;
+  document.getElementById("igHandle").textContent="@"+b.dataset.ig;
+  document.getElementById("igLink").href="https://www.instagram.com/"+encodeURIComponent(b.dataset.ig)+"/";
+  document.body.classList.add("lock");
+  if(dlg.showModal) dlg.showModal(); else dlg.setAttribute("open","");
+  document.getElementById("igClose").focus();
+});
+function closeIg(){ if(dlg.close) dlg.close(); else dlg.removeAttribute("open"); }
+document.getElementById("igClose").onclick=closeIg;
+dlg.addEventListener("click",function(e){ if(e.target===dlg) closeIg(); });
+dlg.addEventListener("close",function(){ document.body.classList.remove("lock"); if(lastFocus) lastFocus.focus(); });
+</script>
 </body>
 </html>
