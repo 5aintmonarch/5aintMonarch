@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>About 5aint Monarch</title>
+<meta name="description" content="About 5aint Monarch: who we are, the team, and how to reach us. This website is a showcase and is not for buying.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=DM+Sans:wght@400;500;700&display=swap">
+<style>
+/* Layout: same bar as the collection page, big headline, a bordered "not for buying" notice, story, team grouped by role, contact. */
+:root{
+  --bg:#1c1e1f;
+  --surface:#26292a;
+  --line:#3a3e40;
+  --fg:#f6f7f4;
+  --muted:#a4a9a6;
+  --accent:#b9d12a;
+  --accent-ink:#1c1e1f;
+  --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{background:var(--bg);color:var(--fg);font:400 16px/1.6 var(--body);margin:0;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto}
+
+header{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line);
+  margin:0 calc(-1*max(16px,env(safe-area-inset-left,0px)));padding:0 max(16px,env(safe-area-inset-left,0px))}
+.bar{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.logo{font:900 26px/1 var(--display);letter-spacing:.04em;text-transform:uppercase;text-decoration:none}
+.logo b{color:var(--accent);font-weight:900}
+nav{display:flex;gap:22px;align-items:center}
+nav a{font-size:14px;text-decoration:none;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+nav a:hover,nav a[aria-current="page"]{color:var(--fg)}
+nav a[aria-current="page"]{border-bottom:2px solid var(--accent);padding-bottom:2px}
+
+.hero{padding-block:72px 40px}
+.eyebrow{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:0 0 18px}
+h1{font:900 clamp(64px,12vw,140px)/.85 var(--display);text-transform:uppercase;margin:0;text-wrap:balance}
+h1 span{color:var(--accent)}
+h2{font:800 clamp(36px,5vw,56px)/.95 var(--display);text-transform:uppercase;margin:0 0 24px;text-wrap:balance}
+h3{font:800 24px/1 var(--display);letter-spacing:.08em;text-transform:uppercase;margin:0 0 14px;color:var(--accent)}
+
+.notice{border:1px solid var(--accent);padding:22px 24px;margin-block:8px 0;display:grid;gap:6px}
+.notice strong{font:800 24px/1.1 var(--display);letter-spacing:.06em;text-transform:uppercase}
+.notice p{margin:0;color:var(--muted);max-width:68ch}
+
+section{padding-block:64px;border-top:1px solid var(--line)}
+.hero + section{margin-top:40px}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.story p{color:var(--muted);font-size:18px;max-width:52ch;margin:0 0 16px}
+.story p strong{color:var(--fg);font-weight:500}
+
+.team{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:40px 32px}
+.group{min-width:0}
+.people{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.people li{padding:12px 0;border-bottom:1px solid var(--line);font-size:18px;font-weight:500}
+.people li:first-child{border-top:1px solid var(--line)}
+
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);padding:24px;min-width:0}
+.card .k{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+.card .v{font:700 22px/1.3 var(--body);margin:0;overflow-wrap:anywhere}
+.card .v a{text-decoration:none;border-bottom:2px solid var(--accent)}
+.card .v a:hover{background:var(--accent);color:var(--accent-ink)}
+.cta{display:inline-block;margin-top:28px;background:var(--accent);color:var(--accent-ink);padding:15px 28px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:14px;text-decoration:none}
+.cta:hover{background:var(--fg)}
+
+footer{border-top:1px solid var(--line);padding-block:28px 40px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media (max-width:760px){
+  .story{grid-template-columns:1fr;gap:8px}
+  .hero{padding-block:48px 28px}
+  section{padding-block:48px}
+  nav{gap:16px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <a class="logo" href="index.html">5aint <b>Monarch</b></a>
+    <nav>
+      <a href="index.html#shop">Collection</a>
+      <a href="about.html" aria-current="page">About</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <p class="eyebrow">About us</p>
+    <h1>Made for<br><span>the few</span></h1>
+  </div>
+
+  <div class="notice" role="note">
+    <strong>This website is not for buying</strong>
+    <p>You can't order anything here. This site shows what 5aint Monarch makes. If you want to ask about a piece, contact us using the email or phone number below.</p>
+  </div>
+
+  <section id="story" class="story">
+    <h2>Our story</h2>
+    <div>
+      <p>5AINT MONARCH was created from a vision we had long before the brand officially came to life. After previously attempting to establish a brand of our own, we decided to revisit that vision and take the steps necessary to make it official.</p>
+      <p>Our goal was to turn an idea into a recognizable brand built on creativity, dedication, and ambition. What started as an idea became an opportunity to create something meaningful and develop a name of our own.</p>
+      <p>5AINT MONARCH represents a new beginning, a renewed vision, and the start of something bigger. This is only the beginning of our journey.</p>
+    </div>
+  </section>
+
+  <section id="team">
+    <h2>The team</h2>
+    <div class="team">
+      <div class="group">
+        <h3>Owners</h3>
+        <ul class="people">
+          <li>Preston Jasper</li>
+          <li>Jaden Walker</li>
+        </ul>
+      </div>
+      <div class="group">
+        <h3>Designers</h3>
+        <ul class="people">
+          <li>Jace Jackson</li>
+          <li>Jayce Aikens</li>
+        </ul>
+      </div>
+      <div class="group">
+        <h3>Modelers</h3>
+        <ul class="people">
+          <li>Caiden Fielder</li>
+          <li>Kaleb Walker</li>
+          <li>Markel Cox</li>
+          <li>Jace Jackson</li>
+          <li>Jayce Aikens</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact us</h2>
+    <div class="contact">
+      <div class="card">
+        <p class="k">Email</p>
+        <p class="v"><a href="mailto:5aintmonarch5@gmail.com">5aintmonarch5@gmail.com</a></p>
+      </div>
+      <div class="card">
+        <p class="k">Phone</p>
+        <p class="v"><a href="tel:+16015508559">601-550-8559</a></p>
+      </div>
+    </div>
+    <a class="cta" href="index.html#shop">See the collection</a>
+  </section>
+
+  <footer>
+    <span>&copy; 2026 5aint Monarch</span>
+    <span>Showcase only. Not a store.</span>
+  </footer>
+</main>
+
+</body>
+</html>
