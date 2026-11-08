@@ -20,7 +20,8 @@
   color-scheme:dark;
 }
 *{box-sizing:border-box}
-html{background:var(--bg);scroll-behavior:smooth;scroll-padding-top:96px}
+[hidden]{display:none!important}
+html{background:var(--bg);scroll-behavior:smooth;scroll-padding-top:calc(var(--hdr,80px) + 70px)}
 body{margin:0;background:var(--bg);color:var(--fg);font:400 18px/1.6 var(--serif);
   background-image:radial-gradient(ellipse 80% 50% at 70% 0%,#1b1b1a 0%,rgba(10,10,10,0) 70%);background-repeat:no-repeat;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
@@ -43,17 +44,21 @@ nav a[aria-current="page"]{border-bottom-color:var(--fg)}
 .hero{position:relative;display:grid;grid-template-columns:1fr minmax(240px,340px);gap:40px;align-items:start;padding-block:64px 44px;overflow:hidden}
 .crown{position:absolute;right:6%;top:-6px;width:min(46vw,520px);color:var(--fg);opacity:.08;pointer-events:none}
 .hero > div{position:relative;min-width:0}
-h1{font:300 clamp(60px,10.5vw,148px)/.92 var(--serif);text-transform:uppercase;margin:0;letter-spacing:.005em;text-wrap:balance}
+h1{font:300 clamp(60px,9vw,128px)/.92 var(--serif);text-transform:uppercase;margin:0;letter-spacing:.005em;text-wrap:balance}
 .tag{margin:18px 0 0 6px;font-size:19px;letter-spacing:.55em;color:var(--muted);text-transform:lowercase}
 .lede{margin:14px 0 0;font-size:17px;line-height:1.55;letter-spacing:.14em;color:var(--muted);text-transform:lowercase}
 .rule{display:block;width:76px;border-top:1px solid var(--muted);margin-top:26px}
 
-.filters{display:flex;gap:30px;flex-wrap:wrap;padding-bottom:26px}
-.f{background:none;border:0;border-bottom:1px solid transparent;padding:4px 0;font-size:17px;letter-spacing:.22em;color:var(--dim);text-transform:lowercase}
+.filters{position:sticky;top:var(--hdr,80px);z-index:10;background:var(--bg);display:flex;gap:36px;padding:16px 0 14px;margin-bottom:36px;border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:none}
+.filters::-webkit-scrollbar{display:none}
+.f{background:none;border:0;border-bottom:1px solid transparent;padding:4px 0;font-size:18px;letter-spacing:.2em;color:var(--dim);text-transform:lowercase;white-space:nowrap}
+.f sup{font-size:13px;margin-left:7px;letter-spacing:.04em;vertical-align:top;position:relative;top:-2px}
 .f:hover{color:var(--fg)}
 .f[aria-pressed="true"]{color:var(--fg);border-bottom-color:var(--fg)}
-
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.gh{font:300 clamp(30px,3.6vw,44px)/1 var(--serif);text-transform:lowercase;letter-spacing:.16em;margin:0 0 22px;display:flex;align-items:baseline;gap:14px}
+.gh span{font-size:16px;color:var(--dim);letter-spacing:.08em}
+.grp + .grp{margin-top:72px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:34px 22px}
 .card{min-width:0}
 .tile{display:block;width:100%;padding:0;border:1px solid #1d1c1a;background:#111;aspect-ratio:8/9;overflow:hidden;position:relative}
 .tile img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.02);transition:transform .5s ease}
@@ -83,7 +88,9 @@ footer a:hover{color:var(--fg);border-color:var(--fg)}
   .hero{grid-template-columns:minmax(0,1fr);gap:24px;padding-block:40px 28px}
   h1{font-size:clamp(34px,11vw,80px)}
   .tag{letter-spacing:.4em;font-size:16px}
-  .grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .grid{grid-template-columns:repeat(2,1fr);gap:26px 12px}
+  .gh{letter-spacing:.1em}
+  .grp + .grp{margin-top:52px}
   .cap h3{font-size:17px;letter-spacing:.08em}
   .cap .p{font-size:17px}
   .cap{flex-direction:column;gap:2px}
@@ -136,6 +143,7 @@ dialog::backdrop{background:rgba(0,0,0,.86)}
     <a class="logo" href="index.html"><i>5</i>aint Monarch</a>
     <nav aria-label="Main">
       <a href="index.html#collections">collections</a>
+      <a href="series.html">series</a>
       <a href="about.html" aria-current="page">about us</a>
       <a href="about.html#story">our story</a>
       <a href="about.html#contact">contact</a>
